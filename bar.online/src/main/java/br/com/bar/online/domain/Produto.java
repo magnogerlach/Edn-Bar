@@ -4,13 +4,17 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import br.com.bar.online.enums.TipoProduto;
 
+@Entity
+@Table
 public class Produto implements Serializable {
 
 	
@@ -27,6 +31,17 @@ public class Produto implements Serializable {
 	
 	@Column
 	private BigDecimal valorProduto;
+	
+	@Column	
+	private Integer qtdProduto;
+
+	public Integer getQtdProduto() {
+		return qtdProduto;
+	}
+
+	public void setQtdProduto(Integer qtdProduto) {
+		this.qtdProduto = qtdProduto;
+	}
 
 	public Long getId() {
 		return id;
