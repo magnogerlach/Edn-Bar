@@ -1,5 +1,9 @@
 package br.com.bar.online.test;
 
+import javax.persistence.Query;
+
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
@@ -19,8 +23,19 @@ public class TesteMetodos {
 		tx.begin();
 		em.persist(produto);
 		tx.commit();
-		em.close();
+
 		System.out.println("FIM DE TUDO");
+
+		Query q = em.createQuery("select p from Produto p", Produto.class);
+
+		List<Produto> prod = q.getResultList();
+
+		for (Produto p : prod) {
+			System.out.println(p.getNomeProduto());
+
+			em.close();
+		}
+
 	}
 
 }

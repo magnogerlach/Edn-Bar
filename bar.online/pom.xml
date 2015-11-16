@@ -81,6 +81,22 @@
 			<artifactId>javassist</artifactId>
 			<version>3.18.0-GA</version>
 		</dependency>
+		<!-- JSF -->
+		<dependency>
+			<groupId> com.sun.faces </groupId>
+			<artifactId> jsf-api </artifactId>
+			<version> 2.1.13 </version>
+		</dependency>
+		<dependency>
+			<groupId> com.sun.faces </groupId>
+			<artifactId> jsf-impl </artifactId>
+			<version> 2.1.13 </version>
+		</dependency>
+		<dependency>
+			<groupId> javax.servlet </groupId>
+			<artifactId> javax.servlet-api </artifactId>
+			<version> 3.0.1 </version>
+		</dependency>
 		<!-- Java EE -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
