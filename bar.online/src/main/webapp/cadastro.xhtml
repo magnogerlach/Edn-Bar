@@ -1,13 +1,24 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
 <h:body>
 
 	<h:form>
-		<h:panelGrid>
-		Marca: <h:inputText />
-			<br />
-			<h:outputText value="Ola Mundo" />
+		<h:panelGrid columns="2">
+		Nome do Produto: <h:inputText
+				value="#{produtoBean.produto.nomeProduto}" />
+		Tipo do Produto: <h:selectOneMenu value="#{produtoBean.produto.tipoProduto}">
+				<f:selectItems value="#{produtoBean.tipoProdutoArray}" />
+			</h:selectOneMenu>
+		Valor do Produto: <h:inputText
+				value="#{produtoBean.produto.valorProduto}" />
+		Quantidade do Produto: <h:inputText
+				value="#{produtoBean.produto.qtdProduto}" />
+
+
+			<h:commandButton value="Salvar"
+				action="#{produtoBean.salva(produtoBean.produto)}" />
 
 		</h:panelGrid>
 	</h:form>
