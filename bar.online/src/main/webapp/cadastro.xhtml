@@ -2,9 +2,134 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
-<h:body>
+<h:head>
+<meta charset="utf-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="description" content="EDN Eventos, painel de administração"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <!--<meta http-equiv="refresh" content="1;login.html"/>-->
+    <title>EDN - Eventos</title>
 
-	<h:form>
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes"></meta>
+    <h:link rel="icon" sizes="192x192" href="imagens/android-desktop.png" />
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes"></meta>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"></meta>
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite"></meta>
+    <h:link rel="apple-touch-icon-precomposed" href="imagens/ios-desktop.png" />
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="imagens/touch/ms-touch-icon-144x144-precomposed.png"></meta>
+    <meta name="msapplication-TileColor" content="#3372DF"></meta>
+    <h:link rel="shortcut icon" href="imagens/favicon.png" />
+
+    <h:link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <h:link rel="stylesheet" type ="text/javascript" href="css/mdl/material.min.css"/>
+    
+    <script id="materialScript" href="css/mdl/material.min.js" />
+    
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />
+	<script	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js" />
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/themes/base/jquery-ui.css" type="text/css" />
+	<link rel="stylesheet"	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/cupertino/jquery-ui.css" type="text/css" />
+</h:head>
+
+<h:body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+
+          <!-- Title -->
+          <span class="mdl-layout-title">EDN Eventos - Painel Administrativo</span>
+
+        </div>
+      </header>
+
+      <!-- Menu Lateral -->
+      <div class="mdl-layout__drawer">
+        <header class="drawer-user-area">
+
+          <img src="imagens/user.jpg" class="user-avatar"></img>
+          <h6 class="mdl-typography--title user-name">Nome Sobrenome</h6>
+
+          <div class="demo-avatar-dropdown">
+            <span>usuario@example.com</span>
+            <div class="mdl-layout-spacer"></div>
+            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+              <i class="material-icons" role="presentation">arrow_drop_down</i>
+              <span class="visuallyhidden">Opções</span>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+              <li class="mdl-menu__item"><i class="material-icons">exit_to_app</i> Logout</li>
+            </ul>
+          </div>
+	 </header>
+	 <nav class="mdl-navigation" id="menu">
+          <a class="mdl-navigation__h:link menu-h:link" href="eventos.html"><i class="material-icons menu-icons">event</i>Eventos</a>
+          <a class="mdl-navigation__h:link menu-h:link" href="produtos.html" style="background:rgba(255,255,255,0.3);"><i class="material-icons menu-icons">shopping_cart</i>Produtos</a>  
+          <a class="mdl-navigation__h:link menu-h:link" href="vendas.html"><i class="material-icons menu-icons">account_balance</i>Total de Vendas</a>
+          <a class="mdl-navigation__h:link menu-h:link" href="graficos.html"><i class="material-icons menu-icons">assessment</i>Gráficos</a>
+          
+          
+        </nav>
+      </div>
+
+      <main class="mdl-layout__content mdl-color--grey-100">
+
+        <div class="page-content" id="conteudo">
+          <form class="form-cadastro-produto">
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+             <!--  <input class="mdl-textfield__input" type="text" id="nome-produto" /> -->
+              <label class="mdl-textfield__label form-input-border" for="nome-produto">Nome:</label>
+              <span class="mdl-textfield__error">Insira o nome do produto!</span> 
+              <h:inputText value="#{produtoBean.produto.nomeProduto}" />
+            </div>
+            <br></br>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <!-- <select class="mdl-textfield__input" id="categoria-produto" > -->
+              <!-- <option value="" disabled selected> </option> -->
+               
+			
+              <label class="mdl-textfield__label form-input-border" for="categoria-produto">Categoria:</label>
+              <span class="mdl-textfield__error">Escolha uma categoria!</span>
+               <h:selectOneMenu value="#{produtoBean.produto.tipoProduto}">
+				<f:selectItems value="#{produtoBean.tipoProdutoArray}" />
+			</h:selectOneMenu>
+            </div>
+            <br></br>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <!-- <input class="mdl-textfield__input" type="number" min="1" pattern="-?[0-9]*(\.[0-9]+)?" id="quantidade-produto" /> -->
+              <label class="mdl-textfield__label form-input-border" for="quantidade-produto">Quantidade:</label>
+              <span class="mdl-textfield__error">Insira a quantidade de produtos a serem cadastrados!</span>
+              <h:inputText value="#{produtoBean.produto.qtdProduto}" />
+            </div>
+            <br></br>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+             <!--  <input class="mdl-textfield__input" type="number" step="any" pattern="-?[0-9]*(\.[0-9]+)?" id="valor-produto" /> -->
+              <label class="mdl-textfield__label form-input-border" for="valor-produto">Valor Unitário:</label>
+              <span class="mdl-textfield__error">Insira o valor do produto!</span>
+              <h:inputText value="#{produtoBean.produto.valorProduto}" />
+            </div>
+            <br></br>
+           <!--  <div class="form-buttons" id="form-btn-cadastro-produto"> 
+         foram retirados ifens de button raised e button accent
+              <a class="mdl-button mdl-js-button mdl-button-raised mdl-js-ripple-effect mdl-button-accent btnLogin" href="produtos.html">Cadastrar</a>
+            </div>-->
+   				<h:commandButton value="Salvar"
+				action="#{produtoBean.salva(produtoBean.produto)}" />
+          </form>       
+        </div>
+
+      </main>
+    </div>
+    <script src="css/mdl/material.min.js"></script>
+	 
+	 
+	<!-- <h:form>
 		<h:panelGrid columns="2">
 		Nome do Produto: <h:inputText
 				value="#{produtoBean.produto.nomeProduto}" />
@@ -21,7 +146,7 @@
 				action="#{produtoBean.salva(produtoBean.produto)}" />
 
 		</h:panelGrid>
-	</h:form>
+	</h:form>-->
 
 </h:body>
 </html>

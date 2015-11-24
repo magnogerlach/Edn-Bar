@@ -1,0 +1,179 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="EDN Eventos, painel de administração">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<meta http-equiv="refresh" content="1;login.html"/>-->
+    <title>EDN - Eventos</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="../images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="../images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <link rel="shortcut icon" href="../images/favicon.png" />
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../estilo/mdl/material.min.css">
+    <script id="materialScript" src="../estilo/mdl/material.min.js"></script>
+   <!-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/styles.css"> -->  
+    
+      <h:outputStylesheet library="css" name="styles.css" />
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+    <!-- <script type="text/javascript">
+      $(document).ready(function(){
+        $("#menu a").click(function( e ){
+          e.preventDefault();
+          var href = $( this ).attr('href');
+          $("#conteudo").load( href + " #conteudo", function(){componentHandler.upgradeAllRegistered();} );
+          
+        });
+      });
+    </script> -->
+    
+    <script type="text/javascript">
+    
+      $(document).ready(function(){
+        // var href = $( this ).attr('eventos.html');
+        $("#conteudo").load( 'eventos.html' + " #conteudo", function(){
+          componentHandler.upgradeAllRegistered();
+          $("#eventobtn1").click(function( e ){
+            e.preventDefault();
+            var href = $( this ).attr('href');
+            $("#conteudo").load( href + " #conteudo", function(){
+              componentHandler.upgradeAllRegistered();
+              });
+            });
+          });
+
+          $("#menu a").click(function( e ){
+            e.preventDefault();
+            var href = $( this ).attr('href');
+            $("#conteudo").load( href + " #conteudo", function(){
+              componentHandler.upgradeAllRegistered();
+
+              $("#eventobtn1").click(function( e ){
+                e.preventDefault();
+                var href = $( this ).attr('href');
+                $("#conteudo").load( href + " #conteudo", function(){
+                  componentHandler.upgradeAllRegistered();
+                });           
+              }); 
+            });       
+          });
+        });
+
+    </script>
+
+  </head>
+
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+
+          <!-- Title -->
+          <span class="mdl-layout-title">EDN Eventos - Painel Administrativo</span>
+
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+
+          <!-- Botão de busca -->
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search" />
+              <label class="mdl-textfield__label" for="search">Buscar...</label>
+            </div>
+          </div>
+
+          <!-- Botão que mostra mais itens -->
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+            <li class="mdl-menu__item">About</li>
+            <li class="mdl-menu__item">Contact</li>
+            <li class="mdl-menu__item">Legal information</li>
+          </ul>
+
+          <!-- Navigation. We hide it in small screens. -->
+          <!--<nav class="mdl-navigation mdl-layout--large-screen-only">
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+          </nav>-->
+
+        </div>
+      </header>
+
+      <!-- Menu Lateral -->
+      <div class="mdl-layout__drawer">
+        <header class="drawer-user-area">
+
+          <img src="../images/user.jpg" class="user-avatar">
+          <h6 class="mdl-typography--title user-name">Nome Sobrenome</h6>
+
+          <div class="demo-avatar-dropdown">
+            <span>usuario@example.com</span>
+            <div class="mdl-layout-spacer"></div>
+            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+              <i class="material-icons" role="presentation">arrow_drop_down</i>
+              <span class="visuallyhidden">Accounts</span>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+              <li class="mdl-menu__item">hello@example.com</li>
+              <li class="mdl-menu__item">info@example.com</li>
+              <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
+            </ul>
+          </div>
+
+        </header>
+
+        <nav class="mdl-navigation" id="menu">
+           <a class="mdl-navigation__link menu-link" href="eventos.html"><i class="material-icons menu-icons">event</i>Eventos</a>
+          <a class="mdl-navigation__link menu-link" href="produtos.html"><i class="material-icons menu-icons">shopping_cart</i>Produtos</a>  
+          <a class="mdl-navigation__link menu-link" href="vendas.html"><i class="material-icons menu-icons">account_balance</i>Total de Vendas</a>
+          <a class="mdl-navigation__link menu-link" href="graficos.html"><i class="material-icons menu-icons">assessment</i>Gráficos</a>
+          
+          <!--<div class="mdl-layout-spacer"></div>
+          <a class="mdl-navigation__link" href="">
+            <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i>
+            <span class="visuallyhidden">Help</span>
+          </a>-->
+        </nav>
+      </div>
+
+      <main class="mdl-layout__content mdl-color--grey-100">
+        <div class="page-content" id="conteudo">
+          <!--  Conteúdo aqui -->
+        </div>  
+      </main>
+
+    </div>
+
+    <!--<script src="../estilo/mdl/material.min.js"></script>-->
+  </body>
+</html>

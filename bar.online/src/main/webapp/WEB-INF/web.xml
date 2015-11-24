@@ -5,7 +5,7 @@
 	version="2.5">
 	<display-name>bar.online</display-name>
 	<welcome-file-list>
-		<welcome-file>index.jsf</welcome-file>
+		<welcome-file>index.xhtml</welcome-file>
 	</welcome-file-list> <!-- JSF -->
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
@@ -16,6 +16,6 @@
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
-
+	
 	
 </web-app>

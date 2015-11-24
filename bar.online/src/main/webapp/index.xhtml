@@ -1,0 +1,130 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	 <meta charset="utf-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps."></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <!--<meta http-equiv="refresh" content="1;login.html"/>-->
+    <title>EDN Eventos - Painel Administrativo</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes"></meta>
+    <h:link  rel="icon" sizes="192x192" href="imagens/android-desktop.png" />
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes"></meta>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"></meta>
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite"></meta>
+    <h:link rel="apple-touch-icon-precomposed" href="imagens/ios-desktop.png"/>
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="imagens/touch/ms-touch-icon-144x144-precomposed.png"></meta>
+    <meta name="msapplication-TileColor" content="#3372DF"></meta>
+    <h:link rel="shortcut icon" href="imagens/favicon.png"/>
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <h:link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <h:link rel="stylesheet" type ="text/javascript" href="css/mdl/material.min.css"/>
+    
+    <script id="materialScript" href="css/mdl/material.min.js" />
+    
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />
+	<script	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js" />
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/themes/base/jquery-ui.css" type="text/css" />
+	<link rel="stylesheet"	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/cupertino/jquery-ui.css" type="text/css" />
+    <!--<script type="text/javascript" src="script.js"></script>-->
+    
+   <script type="text/javascript">
+      $(document).ready(function(){
+        $("#esqueci").click(function( e ){
+          e.preventDefault();
+          var href = $( this ).attr('href');
+          $("#conteudo").load( href + " #conteudo", function(){
+            componentHandler.upgradeAllRegistered();
+
+            $("#enviar-user").click(function( e ){
+              e.preventDefault();
+              var href = $( this ).attr('href');
+              $("#conteudo").load( href + " #conteudo", function(){
+                componentHandler.upgradeAllRegistered();
+              });           
+            });
+          });       
+        });
+      });
+    </script>
+
+</h:head>
+<h:body>	
+					
+<!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+
+          <!-- Title -->
+          <span class="mdl-layout-title">EDN Eventos - Painel Administrativo</span>
+
+        </div>
+      </header>
+
+      <main class="mdl-layout__content login-background">
+        <div class="page-content" id="conteudo"> <!-- Aqui começa o conteúdo principal -->
+          <form action="#" class="form-login">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="email" id="user" />
+              <label class="mdl-textfield__label" for="user">Usuário</label>
+              <span class="mdl-textfield__error">Digite seu usuário.</span>
+            </div>
+
+            <br></br>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="password" id="pass" />
+              <label class="mdl-textfield__label" for="pass">Senha</label>
+              <span class="mdl-textfield__error">Digite a sua senha.</span>
+            </div>
+            <br></br>
+
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="cb-lembrar">
+              <input type="checkbox" id="cb-lembrar" class="mdl-checkbox__input" />
+              <span class="mdl-checkbox__label">Lembrar-me</span>
+            </label>
+            <br></br>
+              
+            <div class="form-buttons" id="form-btn">  
+              <button id="esqueci" class="mdl-button mdl-js-button mdl-button--primary" href="esquecisenha.html">Esqueci a senha</button>
+              <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent btnLogin" href="eventos.html">Entrar</a>
+         		
+            </div>
+          </form>
+        </div>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer__left-section">
+          <div class="mdl-logo">Title</div>
+          <ul class="mdl-mini-footer__link-list">
+            <li><a href="#">Ajuda</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="#">Política e Termos de Privacidade</a></li>
+          </ul>
+        </div>
+      </footer>
+
+    </div>
+
+
+</h:body>
+</html>
