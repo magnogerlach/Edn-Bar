@@ -26,13 +26,13 @@
     <h:link rel="shortcut icon" href="imagens/favicon.png" />
 
     <h:link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-    <h:link rel="stylesheet" type ="text/javascript" href="css/mdl/material.min.css"/>
+    
     
     <link href="#{facesContext.externalContext.requestContextPath}/resources/css/styles.css" rel="stylesheet" type="text/css" />
 
     <script id="materialScript" href="css/mdl/material.min.js" />
     
-    <link rel="stylesheet" type="text/css" href="css/styles.css"/> 
+   
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />
 	<script	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js" />
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/themes/base/jquery-ui.css" type="text/css" />
@@ -82,48 +82,26 @@
       <main class="mdl-layout__content mdl-color--grey-100">
 
         <div class="page-content" id="conteudo">
-          <form class="form-cadastro-produto">
-
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-             <!--  <input class="mdl-textfield__input" type="text" id="nome-produto" /> -->
-              <label class="mdl-textfield__label form-input-border" for="nome-produto">Nome:</label>
-              <span class="mdl-textfield__error">Insira o nome do produto!</span> 
-              <h:inputText value="#{produtoBean.produto.nomeProduto}" />
-            </div>
-            <br></br>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <!-- <select class="mdl-textfield__input" id="categoria-produto" > -->
-              <!-- <option value="" disabled selected> </option> -->
-               
-			
-              <label class="mdl-textfield__label form-input-border" for="categoria-produto">Categoria:</label>
-              <span class="mdl-textfield__error">Escolha uma categoria!</span>
-               <h:selectOneMenu value="#{produtoBean.produto.tipoProduto}">
+          
+	<h:form>
+		<h:panelGrid columns="2">
+		Nome do Produto: <h:inputText
+				value="#{produtoBean.produto.nomeProduto}" />
+		Tipo do Produto: <h:selectOneMenu value="#{produtoBean.produto.tipoProduto}">
 				<f:selectItems value="#{produtoBean.tipoProdutoArray}" />
 			</h:selectOneMenu>
-            </div>
-            <br></br>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <!-- <input class="mdl-textfield__input" type="number" min="1" pattern="-?[0-9]*(\.[0-9]+)?" id="quantidade-produto" /> -->
-              <label class="mdl-textfield__label form-input-border" for="quantidade-produto">Quantidade:</label>
-              <span class="mdl-textfield__error">Insira a quantidade de produtos a serem cadastrados!</span>
-              <h:inputText value="#{produtoBean.produto.qtdProduto}" />
-            </div>
-            <br></br>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-             <!--  <input class="mdl-textfield__input" type="number" step="any" pattern="-?[0-9]*(\.[0-9]+)?" id="valor-produto" /> -->
-              <label class="mdl-textfield__label form-input-border" for="valor-produto">Valor Unitário:</label>
-              <span class="mdl-textfield__error">Insira o valor do produto!</span>
-              <h:inputText value="#{produtoBean.produto.valorProduto}" />
-            </div>
-            <br></br>
-           <!--  <div class="form-buttons" id="form-btn-cadastro-produto"> 
-         foram retirados ifens de button raised e button accent
-              <a class="mdl-button mdl-js-button mdl-button-raised mdl-js-ripple-effect mdl-button-accent btnLogin" href="produtos.html">Cadastrar</a>
-            </div>-->
-   				<h:commandButton value="Salvar"
+		Valor do Produto: <h:inputText
+				value="#{produtoBean.produto.valorProduto}" />
+		Quantidade do Produto: <h:inputText
+				value="#{produtoBean.produto.qtdProduto}" />
+
+
+			<h:commandButton value="Salvar"
 				action="#{produtoBean.salva(produtoBean.produto)}" />
-          </form>       
+
+		</h:panelGrid>
+	</h:form>
+   			     
         </div>
 
       </main>

@@ -6,6 +6,8 @@ import javax.faces.bean.ManagedBean;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import br.com.bar.online.conection.JPAUtil;
 import br.com.bar.online.domain.Produto;
 import br.com.bar.online.enums.TipoProduto;
@@ -17,12 +19,15 @@ public class ProdutoBean {
 	private TipoProduto tipoProduto;
 	private List<Produto> produtos;
 
+	
 	public void salva(Produto produto) {
 
 		EntityManager em = JPAUtil.getEntityMananger();
 		em.getTransaction().begin();
+		em.merge(produto);
 		em.persist(produto);
 		em.getTransaction().commit();
+		
 		em.close();
 
 	}

@@ -1,37 +1,43 @@
-<!doctype html>
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="EDN Eventos, painel de administração">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+  <h:head>
+    <meta charset="utf-8" ></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" ></meta>
+    <meta name="description" content="EDN Eventos, painel de administração" ></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1" ></meta>
     <title>EDN - Eventos</title>
 
     <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="../images/android-desktop.png">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="icon" sizes="192x192" href="${facesContext.externalContext.requestContextPath}/resources/imagens/android-desktop.png" />
 
     <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
-    <link rel="apple-touch-icon-precomposed" href="../images/ios-desktop.png">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite" />
+    <link rel="apple-touch-icon-precomposed" href="imagens/ios-desktop.png" />
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#3372DF">
-    <link rel="shortcut icon" href="../images/favicon.png" />
+    <meta name="msapplication-TileImage" content="imagens/touch/ms-touch-icon-144x144-precomposed.png" />
+    <meta name="msapplication-TileColor" content="#3372DF" />
+    <link href="${facesContext.externalContext.requestContextPath}/resources/imagens/favicon.png" rel="shortcut icon" />
 
     <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
     <!--
-    <link rel="canonical" href="http://www.example.com/">
+    <h:link rel="canonical" href="http://www.example.com/">
     -->
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="../estilo/mdl/material.min.css">
-    <script id="materialScript" src="../estilo/mdl/material.min.js"></script>
-    <link rel="stylesheet" href="../estilo/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <!-- <link rel="stylesheet" href="css/mdl/material.min.css" />-->
+    <script src="resources/css/mdl/material.min.js"></script>
+    <link href="${facesContext.externalContext.requestContextPath}/resources/css/styles.css" rel="stylesheet" type="text/css" />
+
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 
@@ -80,7 +86,7 @@
 
     </script> -->
 
-  </head>
+  </h:head>
 
   <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
@@ -88,7 +94,7 @@
         <div class="mdl-layout__header-row">
 
           <!-- Title -->
-          <span class="mdl-layout-title">EDN Eventos - Painel Administrativo</span>
+          <span class="mdl-layout-title"> EDN Eventos - Painel Administrativo </span>
 
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
@@ -115,7 +121,7 @@
           </ul>
 
           <!-- Navigation. We hide it in small screens. -->
-          <!--<nav class="mdl-navigation mdl-layout--large-screen-only">
+          <!--<nav class="mdl-navigation mdl-layout-large-screen-only">
             <a class="mdl-navigation__link" href="">Link</a>
             <a class="mdl-navigation__link" href="">Link</a>
             <a class="mdl-navigation__link" href="">Link</a>
@@ -129,7 +135,7 @@
       <div class="mdl-layout__drawer">
         <header class="drawer-user-area">
 
-          <img src="../images/user.jpg" class="user-avatar">
+          <h:link href="imagens/user.jpg" class="user-avatar" />
           <h6 class="mdl-typography--title user-name">Nome Sobrenome</h6>
 
           <div class="demo-avatar-dropdown">
@@ -146,7 +152,7 @@
 
         </header>
 
-        <nav class="mdl-navigation" id="menu">
+        <h:outputFormat  class="mdl-navigation" id="menu">
           <a class="mdl-navigation__link menu-link" href="eventos.html" style="background:rgba(255,255,255,0.3);"><i class="material-icons menu-icons">event</i>Eventos</a>
           <a class="mdl-navigation__link menu-link" href="produtos.html"><i class="material-icons menu-icons">shopping_cart</i>Produtos</a>  
           <a class="mdl-navigation__link menu-link" href="vendas.html"><i class="material-icons menu-icons">account_balance</i>Total de Vendas</a>
@@ -154,10 +160,10 @@
           
           <!--<div class="mdl-layout-spacer"></div>
           <a class="mdl-navigation__link" href="">
-            <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i>
+            <i class="mdl-color-text-blue-grey-400 material-icons" role="presentation">help_outline</i>
             <span class="visuallyhidden">Help</span>
           </a>-->
-        </nav>
+        </h:outputFormat>
       </div>
 
       <main class="mdl-layout__content mdl-color--grey-100">
@@ -183,7 +189,7 @@
               <div class="mdl-card__title card2">
                 <h2 class="mdl-card__title-text">Updates</h2>
               </div>
-              <!--<div class="mdl-card__supporting-text mdl-color-text--grey-600">
+              <!--<div class="mdl-card__supporting-text mdl-color-texts-grey-600">
                 Non dolore elit adipisicing ea reprehenderit consectetur culpa.
               </div>-->
               <div class="mdl-card__actions mdl-card--border">

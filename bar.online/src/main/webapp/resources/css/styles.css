@@ -126,14 +126,14 @@ html, body {
 .card1 {
   color: #fff;
   height: 176px;
-  background: url('../images/festa3.jpg') center / cover;
+  background: url('../imagens/festa3.jpg') center / cover;
   /*background: url('http://www.getmdl.io/assets/demos/welcome_card.jpg') center / cover;*/
 }
 
 .card2{
   color: #fff;
   height: 176px;
-  background: url('../images/festa2.jpg') center / cover;
+  background: url('../imagens/festa2.jpg') center / cover;
 }
 
 .demo-card-wide > .mdl-card__menu {
@@ -366,6 +366,13 @@ textarea {
 .hidden {
 	display: none !important
 }
+
+
+[class^="icon-"], [class*=" icon-"] {
+    background-image: none !important;
+    text-indent: 0px;
+}
+
 
 .visuallyhidden {
 	border: 0;
