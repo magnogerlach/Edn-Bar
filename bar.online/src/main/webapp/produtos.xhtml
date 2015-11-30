@@ -166,58 +166,54 @@
         </nav>
       </div>
 
-     <main class="mdl-layout__content mdl-color--grey-100">
-
+      <main class="mdl-layout__content mdl-color--grey-100">
         <div class="page-content" id="conteudo">
-          <h:form class="form-cadastro-produto">
-
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <h:inputText class="mdl-textfield__input"   value="#{produtoBean.produto.nomeProduto}" />
-              <label class="mdl-textfield__label form-input-border" for="nome-produto" >Nome: </label>
-              	
-              <span class="mdl-textfield__error">Insira o nome do produto!</span>
-            </div>
-            <br></br>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <select class="mdl-textfield__input" id="categoria-produto" >
-                <option value="" > </option>
-                <option value="combo">Combos</option>
-                <option value="bebida">Bebidas</option>
-                <option value="comida">Comidas</option>
-              </select>
-              <label class="mdl-textfield__label form-input-border" for="categoria-produto">Categoria:</label>
-              <span class="mdl-textfield__error">Escolha uma categoria!</span>
-            </div>
-            <br></br>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input class="mdl-textfield__input" type="number" min="1" pattern="-?[0-9]*(\.[0-9]+)?" id="quantidade-produto" />
-              <label class="mdl-textfield__label form-input-border" for="quantidade-produto">Quantidade:</label>
-              <span class="mdl-textfield__error">Insira a quantidade de produtos a serem cadastrados!</span>
-            </div>
-            <br></br>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input class="mdl-textfield__input" type="number" step="any" pattern="-?[0-9]*(\.[0-9]+)?" id="valor-produto" />
-              <label class="mdl-textfield__label form-input-border" for="valor-produto">Valor Unitário:</label>
-              <span class="mdl-textfield__error">Insira o valor do produto!</span>
-            </div>
-            <br></br>
-            <div class="form-buttons" id="form-btn-cadastro-produto">
-             <!--  <h:commandButton class="mdl-button mdl-js-button mdl-button-raised mdl-js-ripple-effect mdl-button-accent btnLogin"
-              value="Salvar" action="#{produtoBean.salva(produtoBean.produto)}"  href="produtos.xhtml"/> -->
-              <h:commandButton value="Salvar"
-				action="#{produtoBean.salva(produtoBean.produto)}" />
-            </div>
-
-          </h:form>       
+          
+        	<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp tabela-produtos">
+			  <thead>
+			    <tr>
+			      <th class="mdl-data-table__cell--non-numeric">Produto</th>
+			      <th>Quantidade</th>
+			      <th>Valor Unitário</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <td class="mdl-data-table__cell--non-numeric">Coca-Cola ZERO 350ml</td>
+			      <td>215</td>
+			      <td>R$2,50</td>
+			    </tr>
+			    <tr>
+			      <td class="mdl-data-table__cell--non-numeric">Espumante Villa Francioni Brut Rose</td>
+			      <td>50</td>
+			      <td>R$102,85</td>
+			    </tr>
+			    <tr>
+			      <td class="mdl-data-table__cell--non-numeric">Whisky Johnnie Walker - RED</td>
+			      <td>73</td>
+			      <td>R$75,82</td>
+			    </tr>
+			    <tr>
+			      <td class="mdl-data-table__cell--non-numeric">Vodka Absolut Originality</td>
+			      <td>30</td>
+			      <td>R$82,37</td>
+			    </tr>
+			  </tbody>
+			</table>
+            
         </div>
+		
+		<a href="cadastro.xhtml" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored btn-add-produto btnLogin">
+  			<i class="material-icons">add</i>
+		</a>
 
       </main>
+
+
+
     </div>
-    <script src="css/mdl/material.min.js"></script>
-	 
-	 
-	
+    
 
-</h:body>
+    <script src="resources/css/mdl/material.min.js"></script>
+  </h:body>
 </html>
-

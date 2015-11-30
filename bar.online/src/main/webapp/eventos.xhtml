@@ -88,7 +88,7 @@
 
   </h:head>
 
-  <body>
+  <h:body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
@@ -135,7 +135,7 @@
       <div class="mdl-layout__drawer">
         <header class="drawer-user-area">
 
-          <h:link href="imagens/user.jpg" class="user-avatar" />
+          <h:link href="${facesContext.externalContext.requestContextPath}/resources/imagens/user.jpg" class="user-avatar" />
           <h6 class="mdl-typography--title user-name">Nome Sobrenome</h6>
 
           <div class="demo-avatar-dropdown">
@@ -146,24 +146,24 @@
               <span class="visuallyhidden">Opções</span>
             </button>
             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-              <a style="text-decoration:none;" href="index1.xhtml"><li class="mdl-menu__item"><i class="material-icons">exit_to_app</i> Logout</li></a>
+              <a style="text-decoration:none;" href="index.xhtml"><li class="mdl-menu__item"><i class="material-icons">exit_to_app</i> Logout</li></a>
             </ul>
           </div>
 
         </header>
 
-        <h:outputFormat  class="mdl-navigation" id="menu">
-          <a class="mdl-navigation__link menu-link" href="eventos.html" style="background:rgba(255,255,255,0.3);"><i class="material-icons menu-icons">event</i>Eventos</a>
-          <a class="mdl-navigation__link menu-link" href="produtos.html"><i class="material-icons menu-icons">shopping_cart</i>Produtos</a>  
-          <a class="mdl-navigation__link menu-link" href="vendas.html"><i class="material-icons menu-icons">account_balance</i>Total de Vendas</a>
-          <a class="mdl-navigation__link menu-link" href="graficos.html"><i class="material-icons menu-icons">assessment</i>Gráficos</a>
+        <nav class="mdl-navigation" id="menu">
+          <a class="mdl-navigation__link menu-link" href="eventos.xhtml" style="background:rgba(255,255,255,0.3);"><i class="material-icons menu-icons">event</i>Eventos</a>
+          <a class="mdl-navigation__link menu-link" href="produtos.xhtml"><i class="material-icons menu-icons">shopping_cart</i>Produtos</a>  
+          <a class="mdl-navigation__link menu-link" href="vendas.xhtml"><i class="material-icons menu-icons">account_balance</i>Total de Vendas</a>
+          <a class="mdl-navigation__link menu-link" href="graficos.xhtml"><i class="material-icons menu-icons">assessment</i>Gráficos</a>
           
           <!--<div class="mdl-layout-spacer"></div>
           <a class="mdl-navigation__link" href="">
             <i class="mdl-color-text-blue-grey-400 material-icons" role="presentation">help_outline</i>
             <span class="visuallyhidden">Help</span>
           </a>-->
-        </h:outputFormat>
+        </nav>
       </div>
 
       <main class="mdl-layout__content mdl-color--grey-100">
@@ -204,5 +204,5 @@
     </div>
 
     <!--<script src="../estilo/mdl/material.min.js"></script>-->
-  </body>
+  </h:body>
 </html>
