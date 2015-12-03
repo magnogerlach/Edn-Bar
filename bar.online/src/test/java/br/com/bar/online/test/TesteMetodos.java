@@ -17,7 +17,7 @@ public class TesteMetodos {
 		EntityManager em = JPAUtil.getEntityMananger();
 
 		Produto produto = new Produto();
-		produto.setNomeProduto("CocaCola");
+		produto.setNomeProduto("Soda");
 		produto.setQtdProduto(12);
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
