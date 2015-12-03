@@ -25,6 +25,13 @@ html, body {
 
 }
 
+.fundo-erro{
+	display: block;
+    margin: auto;
+    width: 85%;
+  
+}
+
 
 .login-background{
   background: url(../imagens/festa1.jpg) no-repeat fixed center / cover !important;
