@@ -15,6 +15,7 @@ import br.com.bar.online.enums.TipoProduto;
 
 @Entity
 @Table
+
 public class Produto implements Serializable {
 
 	

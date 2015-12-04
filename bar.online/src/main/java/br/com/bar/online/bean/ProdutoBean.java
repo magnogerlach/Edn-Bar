@@ -19,16 +19,19 @@ public class ProdutoBean {
 	private TipoProduto tipoProduto;
 	private List<Produto> produtos;
 
-	
+	@Transactional(readOnly = false)  
 	public void salva(Produto produto) {
 
 		EntityManager em = JPAUtil.getEntityMananger();
 		em.getTransaction().begin();
-		em.merge(produto);
+	
 		em.persist(produto);
+		em.merge(produto);
 		em.getTransaction().commit();
 		
 		em.close();
+		
+		
 
 	}
 
